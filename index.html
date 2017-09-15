@@ -11,6 +11,30 @@
 			border: 1px solid #ccc;
 			border-radius: 4px;
 			box-sizing: border-box;
+			background-color: #282828;
+			color: white;
+			font-family: 'Roboto Slab';
+			font-weight: bold;
+		}
+
+		#time {
+			color: white;
+		}
+
+		input[type=email], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+			background-color: #282828;
+			color: white;
+		}
+
+		.required-indicator {
+			color: red;
 		}
 
 		input[type=submit] {
@@ -20,8 +44,8 @@
 			-webkit-transition:.5s;
 			/* ...and now for the proper property */
 			transition:.5s;
-			width: 100%;
-			background-color: #4b0066;/*#4CAF50;*/
+			width: 120px;
+			background-color: #6f3684;/*#8e40aa;/*#4b0066;/*#4CAF50;*/
 			color: white;
 			padding: 14px 20px;
 			margin: 8px 0;
@@ -41,8 +65,8 @@
 			-webkit-transition:.5s;
 			/* ...and now for the proper property */
 			transition:.5s;
-			width: 100%;
-			background-color: #4b0066;/*#4CAF50;*/
+			width: 120px;
+			background-color: #6f3684;/*#4CAF50;*/
 			color: white;
 			padding: 14px 20px;
 			margin: 8px 0;
@@ -52,7 +76,7 @@
 		}
 
 		input[type=reset]:hover {
-			background-color: #282828;/*45a049;*/
+			background-color: #242026;/*#282828;/*45a049;*/
 		}
 
 		div {
@@ -74,18 +98,24 @@
 			display: block;
 			margin-bottom: 20px;
 		}
+
+		
 	</style>
-	
+
 	<div>
 	<title>Order your free T shirt, WBUT Exclusive!</title>
 	<form method="post" action="https://script.google.com/macros/s/AKfycbz2mtIuDIOUgfwHInyuTDntK1Iz7WtexEqTRqRmtfpOy_wAc9ms/exec">
 		<h1 align="center">WBUT T-Shirt Form</h1>
 		<label>
-		First Name: <br>
+		First Name: <span class="required-indicator">*</span><br>
 		<input type="text" name="firstname" pattern = "[A-Za-z]+" size="20" title="Nam kikore lekhe janish?" required><br>
 		</label>
 		<label>
-		Last Name: <br>
+		Middle Name: <br>
+		<input type="text" name="firstname" pattern = "[A-Za-z]+" size="20" title="Nam kikore lekhe janish?"><br>
+		</label>
+		<label>
+		Last Name: <span class="required-indicator">*</span><br>
 		<input type="text" name="lastname" size="20" pattern="[A-Za-z]+" title="Ager niyom tai follow korte hoye babu" required><br>
 		</label>
 		<label>
@@ -115,19 +145,33 @@
 		<br>
 		</label>
 		<label>
-		Address: <br>
+		Address: <span class="required-indicator">*</span><br>
 		<input type="text" name="address" required><br>
 		</label>
 		<label>
-		Email ID: <br>
+		Email ID: <span class="required-indicator">*</span><br>
 		<input type="email" name="email" required><br>
 		</label>
 		<label>
-		Phone number: <br>
+		Phone number: <span class="required-indicator">*</span><br>
 		<input type="text" name="ph" maxlength="10" pattern="\d{10}" size="10" title="Number 10 er beshi hoyena khoka" required><br>
 		</label>
 		<input type="submit" value="Send Email">
 		<input type="reset">
 	</form>
 	</div>
+
+	<p id="time" align="right">Date</p>
+	<script>
+		function printDate() {
+			document.getElementById("time").innerHTML = Date();
+		}
+
+
+		window.setInterval(function(){
+		  printDate();
+		}, 1000);
+
+
+	</script>
 </html>
