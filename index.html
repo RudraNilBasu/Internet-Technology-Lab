@@ -1,13 +1,99 @@
 <html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	</head>
+	<style>
+		input[type=text], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+
+		input[type=submit] {
+			-o-transition:.5s;
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			/* ...and now for the proper property */
+			transition:.5s;
+			width: 100%;
+			background-color: #4b0066;/*#4CAF50;*/
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+			background-color: #282828;/*45a049;*/
+		}
+
+		input[type=reset] {
+			-o-transition:.5s;
+			-ms-transition:.5s;
+			-moz-transition:.5s;
+			-webkit-transition:.5s;
+			/* ...and now for the proper property */
+			transition:.5s;
+			width: 100%;
+			background-color: #4b0066;/*#4CAF50;*/
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type=reset]:hover {
+			background-color: #282828;/*45a049;*/
+		}
+
+		div {
+			border-radius: 5px;
+			background-color: #333333;/*#f2f2f2;*/
+			padding: 60px;
+			color: white;
+			font-size: 20px;
+			font-family: 'Roboto Slab', arial, serif;
+			/*font-weight: thin;*/
+		}
+
+		body {
+			padding: 20px;
+			background-color: #191919;/*#39004d;*/
+		}
+
+		label {
+			display: block;
+			margin-bottom: 20px;
+		}
+	</style>
+	
+	<div>
 	<title>Order your free T shirt, WBUT Exclusive!</title>
 	<form method="post" action="mailto:rudra.nil.basu.1996@gmail.com">
+		<h1 align="center">WBUT T-Shirt Form</h1>
+		<label>
 		First Name: <br>
-		<input type="text" name="firstname" size="20"><br>
+		<input type="text" name="firstname" pattern = "[A-Za-z]+" size="20" title="Nam kikore lekhe janish?" required><br>
+		</label>
+		<label>
 		Last Name: <br>
-		<input type="text" name="lastname" size="20"><br>
-	 	Gender: <br>
+		<input type="text" name="lastname" size="20" pattern="[A-Za-z]+" title="Ager niyom tai follow korte hoye babu" required><br>
+		</label>
+		<label>
+		Gender: <br>
 		<input type="radio" name="gender" value="male">Male<br>
 		<input type="radio" name="gender" value="female">Female<br>
+		</label>
+		<label>
 		T Shirt size: <br>
 		<select>
 			<option value="small">Small</option>
@@ -16,6 +102,8 @@
 			<option value="xlarge">Extra Large</option>
 		</select>
 		<br>
+		</label>
+		<label>
 		T Shirt color:<br>
 		<select>
 			<option value="red">Red</option>
@@ -25,13 +113,21 @@
 			<option value="white">White</option>
 		</select>
 		<br>
+		</label>
+		<label>
 		Address: <br>
-		<input type="text" name="address"><br>
+		<input type="text" name="address" required><br>
+		</label>
+		<label>
 		Email ID: <br>
-		<input type="email" name="email"><br>
+		<input type="email" name="email" required><br>
+		</label>
+		<label>
 		Phone number: <br>
-		<input type="number" name="ph" maxlen="10" size="10"><br>
+		<input type="text" name="ph" maxlength="10" pattern="\d{10}" size="10" title="Number 10 er beshi hoyena khoka" required><br>
+		</label>
 		<input type="submit" value="Send Email">
 		<input type="reset">
 	</form>
+	</div>
 </html>
